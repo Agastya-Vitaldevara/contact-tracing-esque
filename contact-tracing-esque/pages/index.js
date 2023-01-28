@@ -1,11 +1,14 @@
 //temp dummy data
 
+import SymptomList from "@/components/SymptomList";
+
 const DUMMY_DATA = [
   {
     user: "AgastyaV",
     symptoms: [
       { symptom: "runny nose", severity: "mild" },
       { symptom: "headache", severity: "mild" },
+      { symptom: "sore throat", severity: "severe" },
       { symptom: "sore throat", severity: "severe" },
     ],
     diagnosis: {
@@ -43,7 +46,7 @@ const DUMMY_DATA = [
 function Home(props) {
   return (
     <>
-      <h1>home</h1>
+      <SymptomList data={props.data} />
     </>
   );
 }
@@ -52,9 +55,9 @@ export default Home;
 
 export async function getStaticProps() {
   //fetch data from api;
-  const data = DUMMY_DATA;
 
   return {
-    props: { data },
+    props: { data: DUMMY_DATA },
+    revalidate: 1,
   };
 }
