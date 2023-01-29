@@ -1,5 +1,5 @@
-function Symptom({ data }) {
-  return <></>;
+function Symptom(props) {
+  return <h2>Symptom {props.id}</h2>;
 }
 
-export default Symptom();
+export default Symptom;
