@@ -6,7 +6,14 @@ function SymptomList(props) {
   });
   console.log(output);
 
-  return <div>{output}</div>;
+  return (
+    <>
+      <h2>Diagnosed</h2>
+      <table>{diagnosedOutput}</table>
+      <h2>Undiagnosed</h2>
+      <table>{undiagnosedOutput}</table>
+    </>
+  );
 }
 
 export default SymptomList;
